@@ -14,7 +14,6 @@ body {
     position: relative;
     width: 100%;
     height:100%;
-    /* background-color: #1B1B1B; */
     background-color: black;
 }
 
@@ -23,6 +22,7 @@ body {
     width: 25%;
     height: 100%;
     left: 37.5%;
+    margin-top: 2vh;
 }
 
 .dropdown-selection a{
@@ -36,10 +36,13 @@ body {
     box-shadow: 0px 2px 3px #169CE7;
     margin-bottom:2.5px;
     background-color: #2b2626;
+    transition: all 200ms ease-out;
 }
 
 .dropdown-selection a:hover {
-    color:rgb(23, 199, 96);
+    color:rgb(238, 133, 34);
+    transform: scale(1.1);
+    background-color: rgb(19, 18, 18);
 }
 
 #button-timetable {
@@ -50,17 +53,17 @@ body {
     padding-left:1em;
     padding-right:1em;
     background-color: black;
+    color: #C88141;
     border: none;
     font-family: 'Lobster';
     font-size: 3em;
-    color: #99D3F3;
     cursor: pointer;
     box-shadow: 0px 2px 3px white;
     transition: all 300ms ease-in-out;
 }
 
 #button-timetable:hover {
-    color:#169CE7;
+    color: #F87217;
 }
 
 .container:hover .dropdown-selection a{
@@ -84,7 +87,7 @@ body {
 .timetable table th{
     width: 13.3%;
     background-color: #222629;
-    color: #f3c96d;
+    color: #f7c353;
     font-size: 2em;
     height:3em;
     text-transform: uppercase;

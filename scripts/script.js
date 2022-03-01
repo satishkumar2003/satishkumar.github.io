@@ -5,14 +5,11 @@ var subjects = [
     
     /*Sem 3*/
     'IMA221,#08415c','ICS221,#cc2936','ICS222,#2e933c','ICS223,#a06cd5','ICS224,#2e1f27','IHS221,#759aab','IHS222,#1E392A','ICS225,#a87532','IEC221,#cc2936','IEC222,#2e933c',
-    'IEC223,#a06cd5','ICS222-LAB,#2e933c','ICS224-LAB,#2e1f27','ICS225-LAB,#a87532','ICS223-LAB,#a06cd5','IEC223-LAB (14:00-14:55),#a06cd5','IEC221-LAB,#cc2936',
+    'IEC223,#a06cd5','ICS222-LAB,#2e933c','ICS224-LAB,#2e1f27','ICS225-LAB,#a87532','ICS223-LAB,#a06cd5','IEC223-LAB,#a06cd5','IEC221-LAB,#cc2936',
     
     /*Sem 6*/
     'CSE321,#08415c','CSE322,#cc2936','ICS321,#2e933c','ICS322,#a06cd5','ISC321,#2e1f27','IOE321,#759aab','CSE321-LAB,#08415c','ICS321-LAB,#2e933c','CSE322-LAB,#cc2936',
-    'Honours-1,#dd7230','CCA/TPA,#2e1f27','TPA,#2e1f27',
-    
-    /*Sem 8*/
-    'ICS422,#a06cd5','ICS423,#2e933c','IOE421,#cc2936','ICS423-LAB,#2e933c','Honours-2,#dd7230','BTP-2,#759aab'];
+    'Honours-1,#dd7230','CCA/TPA,#2e1f27','TPA,#2e1f27']
 
 var tooltip_sub = [
     /*Sem 1*/
@@ -27,10 +24,7 @@ var tooltip_sub = [
     /*Sem 6*/
     'Microprocessors','Cloud Computing','Data Warehousing and Data Mining','Machine Learning','High Performance and Scientific Computing','Software Design Patterns',
     'Microprocessors-LAB','High Performance and Scientific Computing LAB','Cloud Computing LAB','Honours-1','Coding Club Activities/Training and Placement Activities',
-    'Training and Placement Activities',
-    
-    /*Sem 8*/
-    'Applied Predicative Analytics','Internet of Things','Deep Learning','Internet of Things LAB','Honours-2','B Tech Project Phase 2']
+    'Training and Placement Activities']
 
 
 //Timetables
@@ -43,10 +37,8 @@ var y2cscyb2 = [[17,18,15,14,25,9],[15,14,18,16,26,9],[14,19,19,14,27,13],[17,16
 var y2ecb1 =   [[22,18,24,15,29,9],[24,14,26,24,26,9],[18,14,23,15,27,13],[23,22,19,23,30,9],[23,20,22,21,7,8]]
 var y2ecb2 =   [[22,18,24,15,29,9],[24,14,26,24,26,9],[14,19,23,15,27,13],[23,22,20,23,30,9],[23,18,22,21,7,8]]
 var y3cs =     [[34,32,31,35,37,40],[32,31,34,35,38,9],[35,36,33,40,39,13],[33,32,31,36,40,41],[36,33,40,34,7,42]]
-var y4cs =     [[-1,43,48,45,47,47],[-1,45,48,44,47,47],[-1,44,48,45,47,13],[-1,48,48,43,46,42],[-1,44,48,43,7,42]]
 
-
-var classes =  [y1cscyb1,y1cscyb2,y1ecb1,y1ecb2,y2cscyb1,y2cscyb2,y2ecb1,y2ecb2,y3cs,y4cs]
+var classes =  [y1cscyb1,y1cscyb2,y1ecb1,y1ecb2,y2cscyb1,y2cscyb2,y2ecb1,y2ecb2,y3cs]
 var days = ['M','T','W','TH','F'];
 
 
@@ -62,17 +54,10 @@ function display(selected){
                 target.setAttribute('data-tooltip',tooltip_sub[index]);
             } else {
                 target.innerHTML = 'NONE';
-                target.style.backgroundColor = 'rgba(250, 235, 215, 0.466)';
+                target.style.backgroundColor = 'rgb(88, 82, 74)';
                 target.setAttribute('data-tooltip','None');
             }
         }
-    }
-    var lastPeriod = document.getElementById("changeFor8");
-    //Sem 8 has last period starts at 14:15, continues till 17:15 instead of till 18:15
-    if(selected===9){
-        lastPeriod.innerHTML = "16:15 - 17:15";
-    } else {
-        lastPeriod.innerHTML = "16:15 - 18:15";
     }
 }
 
