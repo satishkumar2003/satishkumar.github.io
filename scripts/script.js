@@ -32,7 +32,7 @@ var class_id = [
     [114,113],[110,109],[111,112],[106,107],[115,116],[98,108],[117,117],['#','#'],['#','#'],[134,134],[110,109],[111,112],[98,108],['#','#'],
     
     /*2020*/
-    [192,'#'],[204,'#'],[205,'#'],[207,'#'],[194,'#'],[198,'#'],[196,'#'],[200,'#'],[201,'#'],[202,'#'],[203,'#'],[205,'#'],[194,'#'],[200,'#'],[209,'#'],[203,'#'],[221,'#'],
+    [192,191],[204,204],[205,206],[207,208],[194,193],[198,197],[196,195],[200,199],[201,201],[202,202],[203,203],[205,206],[194,193],[200,199],[209,209],[203,203],[201,201],
     /*2019*/
     [93],[89],[94],[90],[118],[91],[93],[94],[89],['#'],['#'],['#']
 ]
@@ -63,8 +63,18 @@ function display(selected){
             if(index!=-1){
                 if(class_id[index][selected%2]=='#'){
                     HTML = subjects[index].split(',')[0];
+                } else if(selected%8 > 3){
+                    if(index==9){
+                        HTML = subjects[index].split(',')[0];
+                    } else {
+                        HTML = "<a href = \"https://lms.iiitkottayam.ac.in/course/view.php?id=" + String(class_id[index][selected%2]) + "\" target=\"_blank\">" + subjects[index].split(',')[0] + "</a>";
+                    }
                 } else {
-                    HTML = "<a href=\"https://lmsone.iiitkottayam.ac.in/course/view.php?id=" + String(class_id[index][selected%2]) + "\" target=\"_blank\">" + subjects[index].split(',')[0] + "</a>";
+                    if(index==9){
+                        HTML = subjects[index].split(',')[0];
+                    } else {
+                        HTML = "<a href=\"https://lmsone.iiitkottayam.ac.in/course/view.php?id=" + String(class_id[index][selected%2]) + "\" target=\"_blank\">" + subjects[index].split(',')[0] + "</a>";
+                    }
                 }
                 target.innerHTML = HTML;
                 target.style.backgroundColor = subjects[index].split(',')[1];
